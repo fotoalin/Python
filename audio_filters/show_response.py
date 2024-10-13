@@ -93,3 +93,11 @@ def show_phase_response(filter_type: FilterType, samplerate: int) -> None:
     plt.ylabel("Phase shift (Radians)")
     plt.plot(np.unwrap(fft_out, -2 * pi))
     plt.show()
+
+
+if __name__ == "__main__":
+    from iir_filter import IIRFilter
+
+    filt = IIRFilter(4)
+    show_frequency_response(filt, 48000)
+    show_phase_response(filt, 48000)
